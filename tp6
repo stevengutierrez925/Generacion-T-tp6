@@ -1,0 +1,198 @@
+INDEX.HTML
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo Práctico Nº 6 - Flexbox</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Trabajo Práctico Nº 6 - Flexbox</h1>
+    <p><strong>Docente:</strong> Lucio Petrucci</p>
+    <p><strong>Fecha de entrega:</strong> [Completar]</p>
+
+    <section id="ej1">
+        <h2>Ejercicio 1: Contenedor Flex Básico</h2>
+        <div class="flex-container basico">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+        <p class="comentario">
+            Este ejemplo muestra un contenedor básico con display: flex. Los elementos se distribuyen en una sola línea según el eje principal.
+        </p>
+    </section>
+
+    <section id="ej2">
+        <h2>Ejercicio 2: Dirección y Envoltura</h2>
+        <div class="flex-container direccion">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+            <div class="item">D</div>
+            <div class="item">E</div>
+            <div class="item">F</div>
+        </div>
+        <p class="comentario">
+            Se utiliza flex-direction: row y flex-wrap: wrap para permitir que los elementos pasen a una nueva línea cuando no hay espacio suficiente.
+        </p>
+    </section>
+
+    <section id="ej3">
+        <h2>Ejercicio 3: Alineación y Justificación</h2>
+        <div class="flex-container alineacion">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+        <p class="comentario">
+            Aquí se usan justify-content y align-items para distribuir los elementos horizontal y verticalmente dentro del contenedor.
+        </p>
+    </section>
+
+    <section id="ej4">
+        <h2>Ejercicio 4: Orden y Flexibilidad Individual</h2>
+        <div class="flex-container flexibilidad">
+            <div class="item" style="order: 3; flex: 1;">A</div>
+            <div class="item" style="order: 1; flex: 2;">B</div>
+            <div class="item" style="order: 2; flex: 1;">C</div>
+            <div class="item especial">D</div>
+        </div>
+        <p class="comentario">
+            Se modifican las propiedades order y flex (shorthand de flex-grow, flex-shrink y flex-basis) para ajustar el tamaño y el orden de los elementos. 
+            Además, un elemento utiliza align-self para cambiar su alineación individualmente.
+        </p>
+    </section>
+
+    <section id="ej5">
+        <h2>Ejercicio 5: Layout Completo con Flexbox</h2>
+        <div class="layout">
+            <header>Cabecera</header>
+            <main>
+                <aside>Barra lateral</aside>
+                <section class="contenido">Contenido principal</section>
+            </main>
+            <footer>Pie de página</footer>
+        </div>
+        <p class="comentario">
+            Este layout utiliza Flexbox para crear una estructura de página con cabecera, contenido principal, barra lateral y pie de página.
+            Es flexible y se adapta al tamaño de la pantalla.
+        </p>
+    </section>
+
+</body>
+</html>
+
+
+
+
+
+STYLE.CSS
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 20px;
+}
+
+h1, h2 {
+    color: #2b5797;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+  .flex-container {
+    display: flex;
+    background-color: #e3e3e3;
+    padding: 10px;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.item {
+    background-color: #2b5797;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.basico {
+    justify-content: flex-start;
+}
+
+.direccion {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.alineacion {
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+}
+
+.flexibilidad {
+    justify-content: space-between;
+    align-items: stretch;
+    height: 200px;
+}
+
+.flexibilidad .especial {
+    align-self: flex-end;
+    background-color: #f39c12;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+header, footer {
+    background-color: #2b5797;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    display: flex;
+    flex: 1;
+}
+
+aside {
+    background-color: #d9e1f2;
+    width: 25%;
+    padding: 20px;
+}
+
+.contenido {
+    background-color: #fefefe;
+    flex: 1;
+    padding: 20px;
+}
+
+footer {
+    background-color: #1e3e6e;
+}
+
+.comentario {
+    margin-top: 15px;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-left: 4px solid #2b5797;
+    color: #444;
+}
